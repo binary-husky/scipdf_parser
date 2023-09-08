@@ -6,8 +6,6 @@ from collections import Counter
 from itertools import groupby
 
 
-nlp = spacy.load("en_core_web_sm")
-
 PRESENT_TENSE_VERB_LIST = ["VB", "VBP", "VBZ", "VBG"]
 VERB_LIST = ["VB", "VBP", "VBZ", "VBG", "VBN", "VBD"]
 NOUN_LIST = ["NNP", "NNPS"]
