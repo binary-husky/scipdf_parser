@@ -212,7 +212,7 @@ def parse_sections(article, as_list: bool = False):
             if not as_list:
                 text = "\n".join(text)
 
-        if heading is not "" or text != "":
+        if heading != "" or text != "":
             ref_dict = calculate_number_of_references(div)
             sections.append(
                 {
@@ -240,7 +240,7 @@ def parse_references(article):
         title = title.text if title is not None else ""
         journal = reference.find("title", attrs={"level": "j"})
         journal = journal.text if journal is not None else ""
-        if journal is "":
+        if journal == "":
             journal = reference.find("publisher")
             journal = journal.text if journal is not None else ""
         year = reference.find("date")
