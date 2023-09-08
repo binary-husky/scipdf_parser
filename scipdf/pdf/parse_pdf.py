@@ -116,7 +116,10 @@ def parse_authors(article):
     """
     Parse authors from a given BeautifulSoup of an article
     """
-    author_names = article.find("sourcedesc").findAll("persname")
+    if not article.find("sourcedesc"): 
+        author_names = article.find("sourcedesc").findAll("persname")
+    else:
+        author_names = article.findAll("persname")
     authors = []
     for author in author_names:
         firstname = author.find("forename", {"type": "first"})
